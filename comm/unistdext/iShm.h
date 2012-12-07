@@ -22,7 +22,13 @@ public:
     void Attach();
 
     void Detach();
-}
+private:
+    key_t _tKey;
+    size_t _tSize;
+    int _iMode;
+    bool _bCreate;
+    int _iShmId;
+};
 
 /**
  * If use more than one block shm, better inherit from this 
@@ -44,4 +50,4 @@ public:
     void Attach();
 
     void Detach();
-}
+};
