@@ -20,5 +20,13 @@ void Shm::Init()
         {
 		throw MemException( errno, "", __func__, __FILE__, __LINE__ );
         }
+
+	if( (_iShmId = shmget( _tKey, _tSize, _iMode )) < 0 )
+		throw MemException( errno, "", __func__, __FILE__, __LINE__ );
     }
+}
+
+void Shm::Attach()
+{
+	
 }

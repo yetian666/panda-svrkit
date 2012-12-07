@@ -22,6 +22,7 @@ public:
     void Attach();
 
     void Detach();
+	
 private:
     key_t _tKey;
     size_t _tSize;
