@@ -54,5 +54,15 @@ namespace unistdext
 		return _pchShm;
 	}
 
+	size_t Shm::GetShmSize()
+	{
+		return _tSize;
+	}
+
+	key_t Shm::GetShmKey()
+	{
+		return _tKey;
+	}
+
 }
 

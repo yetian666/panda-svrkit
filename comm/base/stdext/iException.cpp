@@ -22,7 +22,7 @@ namespace stdext
 		_iErrNo = 0;
 	}
 
-	Exception :: Exception(const iErrno, const string sFunc , const string sFile , const int iLine )
+	Exception :: Exception(const int iErrno, const string sFunc , const string sFile , const int iLine )
 	{
 		_sErrMsg = "";
 		_iErrNo = iErrno;
@@ -40,13 +40,13 @@ namespace stdext
 		if( _sErrMsg.empty() && _iErrNo == 0 )
 			return string("No enough error info");
 			
-		else if( !_sErrMsg.empty() && _iErrNo == 0 ) 
+		else if( _iErrNo < 0 ) 
 			return _sErrMsg;
 		
-		else if( _sErrMsg.empty() && _iErrNo != 0 ) 
+		else if( _sErrMsg.empty() && _iErrNo => 0 ) 
 			return string( strerror_r(_iErrNo, buf , 1024));
 		
-		else 
+		else  
 			return string( strerror_r(_iErrNo, buf , 1024))+" -> "+_sErrMsg;
 		
 	}
@@ -62,5 +62,10 @@ namespace stdext
 		oss<<_sFile<<":"<<_sFunc<<":"<<_iLine<<what();
 
 		return oss.str();
+	}
+
+	const int Exception :: GetErrNo()
+	{
+		return _iErrNo;
 	}
 }

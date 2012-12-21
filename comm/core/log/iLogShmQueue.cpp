@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <time.h>
+#include <string.h>
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -18,7 +19,7 @@ using namespace stdext;
 
 namespace Comm
 {
-	LogShmQueue :: LogShmQueue():_shm(NULL)
+	LogShmQueue :: LogShmQueue():_shm(NULL), _ptHeader(NULL)
 	{
 	}
 
@@ -72,6 +73,7 @@ namespace Comm
 
 	void LogShmQueue :: Init()
 	{	
+		//init shm
 		try
 		{
 			_shm = new  Shm( logShmQueuekey, logShmQueueSize, 0666 );
@@ -81,11 +83,62 @@ namespace Comm
 		catch( MemException &e )
 		{
 			WriteOwnLog("%s(%d) %s", __func__, __LINE__, e.GetMsg() );
+			throw e;
 		}
-		catch( ... )
+
+		//init shm queue head
+		_ptHeader = (LogShmQueueHead_t*)_shm.GetShmAddr();
+
+		_ptHeader->hMainVer = LogShmQueue_MainVer;
+		_ptHeader->hSubVer = LogShmQueue_SubVer;
+		_ptHeader->iMagicNum = LogShmQueue_HeadMagicNum;
+		_ptHeader->iHeadPos = 0;
+		_ptHeader->iTailPos = 0;
+		_ptHeader->iQueueSize = 0;
+		_ptHeader->iFlag = LogShmQueue_FlagOK;
+
+		_ptHeader->sData = (char*)_ptHeader +sizeof(LogShmQueueHead_t);
+		
+	}
+
+	/**
+	 * buf format: char(STX)+short(len)+data+char(ETX)
+	 * push will modify head of shmQueue
+	*/
+	int LogShmQueue::Push(const char * pcBuf, const int iBufLen)
+	{
+		if( _shm == NULL || _ptHeader == NULL )
 		{
-			WriteOwnLog("%s(%d) %s", __func__, __LINE__, "Unknow error" );
+			throw MemException(ERR_LogShmQueue_ShmOrHeadNULL, "LogShmQueue not inited or corrupted", __func__,
+				__FILE__, __LINE__ );
 		}
+			
+		if( _ptHeader->hMainVer != LogShmQueue_MainVer || _ptHeader->hSubVer != LogShmQueue_SubVer || 
+			_ptHeader->iFlag != LogShmQueue_FlagOK || _ptHeader->iMagicNum != LogShmQueue_HeadMagicNum )
+		{
+			WriteOwnLog("%s:%s(%d)logshmqueue head not correct mainver %d, sub ver %d, iFlag %d, MagicNum 0x%x", __FILE__, __func__, __LINE__,
+				_ptHeader->hMainVer, _ptHeader->hSubVer, _ptHeader->iFlag, _ptHeader->iMagicNum );
+			
+			Reset();
+		}
+		
+		int iHeadPos = _ptHeader->iHeadPos;
+		int iRoom = _ptHeader->iTailPos - iHeadPos;
+
+		if( iRoom < 0 )
+			iRoom = _ptHeader->iQueueSize - iRoom;
+
+		
+		
+	}
+
+	void LogShmQueue::Reset()
+	{
+		WriteOwnLog("Reset the logshmqueue");
+
+		if( _shm != NULL )
+			free _shm;
+		Init();
 	}
 	
 }

@@ -17,6 +17,10 @@ namespace unistdext
 	    void Init();
 
 	    char* GetShmAddr();
+
+	    size_t GetShmSize();
+
+	    key_t GetShmKey();
 		
 	private:
 	    key_t _tKey;

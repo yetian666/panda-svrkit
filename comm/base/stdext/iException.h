@@ -23,6 +23,8 @@ namespace stdext
 		const string GetErrMsg();
 
 		const string GetMsg(); 
+
+		const int GetErrNo();
 		
 	protected:
 		int _iErrNo;
