@@ -13,6 +13,7 @@
 #include "iShm.h"
 #include "iMagicNum.h"
 #include "iException.h"
+#include "iTerminalColor.h"
 
 using namespace unistdext;
 using namespace stdext;
@@ -116,7 +117,7 @@ namespace Comm
 		if( _ptHeader->hMainVer != LogShmQueue_MainVer || _ptHeader->hSubVer != LogShmQueue_SubVer || 
 			_ptHeader->iFlag != LogShmQueue_FlagOK || _ptHeader->iMagicNum != LogShmQueue_HeadMagicNum )
 		{
-			WriteOwnLog("%s:%s(%d)logshmqueue head not correct mainver %d, sub ver %d, iFlag %d, MagicNum 0x%x", __FILE__, __func__, __LINE__,
+			WriteOwnLog("%s:%s(%d)"TnClRED"logshmqueue head not correct mainver %d, sub ver %d, iFlag %d, MagicNum 0x%x"TnClEND, __FILE__, __func__, __LINE__,
 				_ptHeader->hMainVer, _ptHeader->hSubVer, _ptHeader->iFlag, _ptHeader->iMagicNum );
 			
 			Reset();
@@ -134,7 +135,7 @@ namespace Comm
 
 	void LogShmQueue::Reset()
 	{
-		WriteOwnLog("Reset the logshmqueue");
+		WriteOwnLog(TnClRED"Reset the logshmqueue"TnClEND);
 
 		if( _shm != NULL )
 			free _shm;
