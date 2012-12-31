@@ -11,12 +11,16 @@ using namespace stdext;
 #define LogShmQueue_SubVer 0x01U
 #define LogShmQueue_HeadMagicNum 0x1234U
 #define LogShmQueue_FlagOK 0
-#define logShmQueue_STX 0x02U
-#define logShmQueue_ETX 0x03U
+#define LogShmQueue_STX 0x02U
+#define LogShmQueue_ETX 0x03U
+#define LogShmQueue_ReserverdShmSect 1048576L
+
+#define LogShmQueue_PushRetryCnt 3
 
 #define LogShmQueue_ErrNo( n ) (ELogShmQueueBaseNo+n)
 
 #define ERR_LogShmQueue_ShmOrHeadNULL LogShmQueue_ErrNo(-1)
+#define ERR_LogShmQueue_PushErr LogShmQueue_ErrNo(-2)
 
 namespace Comm
 {
@@ -52,9 +56,10 @@ namespace Comm
 
 		void Init();
 
-		int Push(const char* pcBuf, const int iBufLen );
+		
+		int Push(const char* pcBuf, int& iBufLen );
 
-		int Pop( char* pcBuf );
+		int Pop( char* pcBuf ,int& iBufLen );
 
 
 	private:

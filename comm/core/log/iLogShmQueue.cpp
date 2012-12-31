@@ -110,7 +110,7 @@ namespace Comm
 	{
 		if( _shm == NULL || _ptHeader == NULL )
 		{
-			throw MemException(ERR_LogShmQueue_ShmOrHeadNULL, "LogShmQueue not inited or corrupted", __func__,
+			throw MemException(ERR_LogShmQueue_ShmOrHeadNULL, "Not inited or corrupted", __func__,
 				__FILE__, __LINE__ );
 		}
 			
@@ -123,12 +123,26 @@ namespace Comm
 			Reset();
 		}
 		
-		int iHeadPos = _ptHeader->iHeadPos;
-		int iRoom = _ptHeader->iTailPos - iHeadPos;
+		for( int i=0; i< LogShmQueue_PushRetryCnt; i++ )
+		{
+			int iHeadPos = _ptHeader->iHeadPos;
+			int iRoom = _ptHeader->iTailPos - iHeadPos -LogShmQueue_ReserverdShmSect;
 
-		if( iRoom < 0 )
-			iRoom = _ptHeader->iQueueSize - iRoom;
+			if( iRoom < 0 )
+				iRoom = _ptHeader->iQueueSize - iRoom;
 
+			int iWriteLen = sizeof(char)+ sizeof(unsigned short)+ iBufLen+ sizeof(char);
+
+			if( iRoom< iWriteLen )
+			{
+				WriteOwnLog(TnClRED"Not have enough room to put log"TnClEND);
+				
+				throw MemException(ERR_LogShmQueue_ShmNotEnoughRoom, 
+					"Not have enough room to put log", __func__, __FILE__, __LINE__ );
+			}
+		}
+
+		
 		
 		
 	}
