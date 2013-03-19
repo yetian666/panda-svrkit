@@ -1,0 +1,148 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+Builder	Test.java	/^      private Builder() {$/;"	m	class:Test.SearchRequest.Builder	file:
+Builder	Test.java	/^      private Builder() {$/;"	m	class:Test.SearchResponse.Builder	file:
+Builder	Test.java	/^      private Builder(BuilderParent parent) {$/;"	m	class:Test.SearchRequest.Builder	file:
+Builder	Test.java	/^      private Builder(BuilderParent parent) {$/;"	m	class:Test.SearchResponse.Builder	file:
+Builder	Test.java	/^    public static final class Builder extends$/;"	c	class:Test.SearchRequest
+Builder	Test.java	/^    public static final class Builder extends$/;"	c	class:Test.SearchResponse
+PAGE_NUMBER_FIELD_NUMBER	Test.java	/^    public static final int PAGE_NUMBER_FIELD_NUMBER = 2;$/;"	f	class:Test.SearchRequest
+QUERY_FIELD_NUMBER	Test.java	/^    public static final int QUERY_FIELD_NUMBER = 1;$/;"	f	class:Test.SearchRequest
+RESULT_PER_PAGE_FIELD_NUMBER	Test.java	/^    public static final int RESULT_PER_PAGE_FIELD_NUMBER = 3;$/;"	f	class:Test.SearchRequest
+RET_FIELD_NUMBER	Test.java	/^    public static final int RET_FIELD_NUMBER = 1;$/;"	f	class:Test.SearchResponse
+SearchRequest	Test.java	/^    private SearchRequest(Builder builder) {$/;"	m	class:Test.SearchRequest	file:
+SearchRequest	Test.java	/^    private SearchRequest(boolean noInit) {}$/;"	m	class:Test.SearchRequest	file:
+SearchRequest	Test.java	/^  public static final class SearchRequest extends$/;"	c	class:Test
+SearchRequestOrBuilder	Test.java	/^  public interface SearchRequestOrBuilder$/;"	i	class:Test
+SearchResponse	Test.java	/^    private SearchResponse(Builder builder) {$/;"	m	class:Test.SearchResponse	file:
+SearchResponse	Test.java	/^    private SearchResponse(boolean noInit) {}$/;"	m	class:Test.SearchResponse	file:
+SearchResponse	Test.java	/^  public static final class SearchResponse extends$/;"	c	class:Test
+SearchResponseOrBuilder	Test.java	/^  public interface SearchResponseOrBuilder$/;"	i	class:Test
+Test	Test.java	/^  private Test() {}$/;"	m	class:Test	file:
+Test	Test.java	/^public final class Test {$/;"	c
+bitField0_	Test.java	/^      private int bitField0_;$/;"	f	class:Test.SearchRequest.Builder	file:
+bitField0_	Test.java	/^      private int bitField0_;$/;"	f	class:Test.SearchResponse.Builder	file:
+bitField0_	Test.java	/^    private int bitField0_;$/;"	f	class:Test.SearchRequest	file:
+bitField0_	Test.java	/^    private int bitField0_;$/;"	f	class:Test.SearchResponse	file:
+build	Test.java	/^      public Test.SearchRequest build() {$/;"	m	class:Test.SearchRequest.Builder
+build	Test.java	/^      public Test.SearchResponse build() {$/;"	m	class:Test.SearchResponse.Builder
+buildParsed	Test.java	/^      private Test.SearchRequest buildParsed()$/;"	m	class:Test.SearchRequest.Builder	file:
+buildParsed	Test.java	/^      private Test.SearchResponse buildParsed()$/;"	m	class:Test.SearchResponse.Builder	file:
+buildPartial	Test.java	/^      public Test.SearchRequest buildPartial() {$/;"	m	class:Test.SearchRequest.Builder
+buildPartial	Test.java	/^      public Test.SearchResponse buildPartial() {$/;"	m	class:Test.SearchResponse.Builder
+clear	Test.java	/^      public Builder clear() {$/;"	m	class:Test.SearchRequest.Builder
+clear	Test.java	/^      public Builder clear() {$/;"	m	class:Test.SearchResponse.Builder
+clearPageNumber	Test.java	/^      public Builder clearPageNumber() {$/;"	m	class:Test.SearchRequest.Builder
+clearQuery	Test.java	/^      public Builder clearQuery() {$/;"	m	class:Test.SearchRequest.Builder
+clearResultPerPage	Test.java	/^      public Builder clearResultPerPage() {$/;"	m	class:Test.SearchRequest.Builder
+clearRet	Test.java	/^      public Builder clearRet() {$/;"	m	class:Test.SearchResponse.Builder
+clone	Test.java	/^      public Builder clone() {$/;"	m	class:Test.SearchRequest.Builder
+clone	Test.java	/^      public Builder clone() {$/;"	m	class:Test.SearchResponse.Builder
+create	Test.java	/^      private static Builder create() {$/;"	m	class:Test.SearchRequest.Builder	file:
+create	Test.java	/^      private static Builder create() {$/;"	m	class:Test.SearchResponse.Builder	file:
+defaultInstance	Test.java	/^    private static final SearchRequest defaultInstance;$/;"	f	class:Test.SearchRequest	file:
+defaultInstance	Test.java	/^    private static final SearchResponse defaultInstance;$/;"	f	class:Test.SearchResponse	file:
+getDefaultInstance	Test.java	/^    public static SearchRequest getDefaultInstance() {$/;"	m	class:Test.SearchRequest
+getDefaultInstance	Test.java	/^    public static SearchResponse getDefaultInstance() {$/;"	m	class:Test.SearchResponse
+getDefaultInstanceForType	Test.java	/^      public Test.SearchRequest getDefaultInstanceForType() {$/;"	m	class:Test.SearchRequest.Builder
+getDefaultInstanceForType	Test.java	/^      public Test.SearchResponse getDefaultInstanceForType() {$/;"	m	class:Test.SearchResponse.Builder
+getDefaultInstanceForType	Test.java	/^    public SearchRequest getDefaultInstanceForType() {$/;"	m	class:Test.SearchRequest
+getDefaultInstanceForType	Test.java	/^    public SearchResponse getDefaultInstanceForType() {$/;"	m	class:Test.SearchResponse
+getDescriptor	Test.java	/^          getDescriptor() {$/;"	m	class:Test.SearchRequest.Builder
+getDescriptor	Test.java	/^          getDescriptor() {$/;"	m	class:Test.SearchResponse.Builder
+getDescriptor	Test.java	/^        getDescriptor() {$/;"	m	class:Test.SearchRequest
+getDescriptor	Test.java	/^        getDescriptor() {$/;"	m	class:Test.SearchResponse
+getDescriptor	Test.java	/^      getDescriptor() {$/;"	m	class:Test
+getDescriptorForType	Test.java	/^          getDescriptorForType() {$/;"	m	class:Test.SearchRequest.Builder
+getDescriptorForType	Test.java	/^          getDescriptorForType() {$/;"	m	class:Test.SearchResponse.Builder
+getPageNumber	Test.java	/^      public int getPageNumber() {$/;"	m	class:Test.SearchRequest.Builder
+getPageNumber	Test.java	/^    int getPageNumber();$/;"	m	interface:Test.SearchRequestOrBuilder
+getPageNumber	Test.java	/^    public int getPageNumber() {$/;"	m	class:Test.SearchRequest
+getQuery	Test.java	/^      public String getQuery() {$/;"	m	class:Test.SearchRequest.Builder
+getQuery	Test.java	/^    String getQuery();$/;"	m	interface:Test.SearchRequestOrBuilder
+getQuery	Test.java	/^    public String getQuery() {$/;"	m	class:Test.SearchRequest
+getQueryBytes	Test.java	/^    private com.google.protobuf.ByteString getQueryBytes() {$/;"	m	class:Test.SearchRequest	file:
+getResultPerPage	Test.java	/^      public int getResultPerPage() {$/;"	m	class:Test.SearchRequest.Builder
+getResultPerPage	Test.java	/^    int getResultPerPage();$/;"	m	interface:Test.SearchRequestOrBuilder
+getResultPerPage	Test.java	/^    public int getResultPerPage() {$/;"	m	class:Test.SearchRequest
+getRet	Test.java	/^      public int getRet() {$/;"	m	class:Test.SearchResponse.Builder
+getRet	Test.java	/^    int getRet();$/;"	m	interface:Test.SearchResponseOrBuilder
+getRet	Test.java	/^    public int getRet() {$/;"	m	class:Test.SearchResponse
+getSerializedSize	Test.java	/^    public int getSerializedSize() {$/;"	m	class:Test.SearchRequest
+getSerializedSize	Test.java	/^    public int getSerializedSize() {$/;"	m	class:Test.SearchResponse
+hasPageNumber	Test.java	/^      public boolean hasPageNumber() {$/;"	m	class:Test.SearchRequest.Builder
+hasPageNumber	Test.java	/^    boolean hasPageNumber();$/;"	m	interface:Test.SearchRequestOrBuilder
+hasPageNumber	Test.java	/^    public boolean hasPageNumber() {$/;"	m	class:Test.SearchRequest
+hasQuery	Test.java	/^      public boolean hasQuery() {$/;"	m	class:Test.SearchRequest.Builder
+hasQuery	Test.java	/^    boolean hasQuery();$/;"	m	interface:Test.SearchRequestOrBuilder
+hasQuery	Test.java	/^    public boolean hasQuery() {$/;"	m	class:Test.SearchRequest
+hasResultPerPage	Test.java	/^      public boolean hasResultPerPage() {$/;"	m	class:Test.SearchRequest.Builder
+hasResultPerPage	Test.java	/^    boolean hasResultPerPage();$/;"	m	interface:Test.SearchRequestOrBuilder
+hasResultPerPage	Test.java	/^    public boolean hasResultPerPage() {$/;"	m	class:Test.SearchRequest
+hasRet	Test.java	/^      public boolean hasRet() {$/;"	m	class:Test.SearchResponse.Builder
+hasRet	Test.java	/^    boolean hasRet();$/;"	m	interface:Test.SearchResponseOrBuilder
+hasRet	Test.java	/^    public boolean hasRet() {$/;"	m	class:Test.SearchResponse
+initFields	Test.java	/^    private void initFields() {$/;"	m	class:Test.SearchRequest	file:
+initFields	Test.java	/^    private void initFields() {$/;"	m	class:Test.SearchResponse	file:
+internalGetFieldAccessorTable	Test.java	/^          internalGetFieldAccessorTable() {$/;"	m	class:Test.SearchRequest.Builder
+internalGetFieldAccessorTable	Test.java	/^          internalGetFieldAccessorTable() {$/;"	m	class:Test.SearchResponse.Builder
+internalGetFieldAccessorTable	Test.java	/^        internalGetFieldAccessorTable() {$/;"	m	class:Test.SearchRequest
+internalGetFieldAccessorTable	Test.java	/^        internalGetFieldAccessorTable() {$/;"	m	class:Test.SearchResponse
+isInitialized	Test.java	/^      public final boolean isInitialized() {$/;"	m	class:Test.SearchRequest.Builder
+isInitialized	Test.java	/^      public final boolean isInitialized() {$/;"	m	class:Test.SearchResponse.Builder
+isInitialized	Test.java	/^    public final boolean isInitialized() {$/;"	m	class:Test.SearchRequest
+isInitialized	Test.java	/^    public final boolean isInitialized() {$/;"	m	class:Test.SearchResponse
+maybeForceBuilderInitialization	Test.java	/^      private void maybeForceBuilderInitialization() {$/;"	m	class:Test.SearchRequest.Builder	file:
+maybeForceBuilderInitialization	Test.java	/^      private void maybeForceBuilderInitialization() {$/;"	m	class:Test.SearchResponse.Builder	file:
+memoizedIsInitialized	Test.java	/^    private byte memoizedIsInitialized = -1;$/;"	f	class:Test.SearchRequest	file:
+memoizedIsInitialized	Test.java	/^    private byte memoizedIsInitialized = -1;$/;"	f	class:Test.SearchResponse	file:
+memoizedSerializedSize	Test.java	/^    private int memoizedSerializedSize = -1;$/;"	f	class:Test.SearchRequest	file:
+memoizedSerializedSize	Test.java	/^    private int memoizedSerializedSize = -1;$/;"	f	class:Test.SearchResponse	file:
+mergeFrom	Test.java	/^      public Builder mergeFrom($/;"	m	class:Test.SearchRequest.Builder
+mergeFrom	Test.java	/^      public Builder mergeFrom($/;"	m	class:Test.SearchResponse.Builder
+mergeFrom	Test.java	/^      public Builder mergeFrom(Test.SearchRequest other) {$/;"	m	class:Test.SearchRequest.Builder
+mergeFrom	Test.java	/^      public Builder mergeFrom(Test.SearchResponse other) {$/;"	m	class:Test.SearchResponse.Builder
+mergeFrom	Test.java	/^      public Builder mergeFrom(com.google.protobuf.Message other) {$/;"	m	class:Test.SearchRequest.Builder
+mergeFrom	Test.java	/^      public Builder mergeFrom(com.google.protobuf.Message other) {$/;"	m	class:Test.SearchResponse.Builder
+newBuilder	Test.java	/^    public static Builder newBuilder() { return Builder.create(); }$/;"	m	class:Test.SearchRequest
+newBuilder	Test.java	/^    public static Builder newBuilder() { return Builder.create(); }$/;"	m	class:Test.SearchResponse
+newBuilder	Test.java	/^    public static Builder newBuilder(Test.SearchRequest prototype) {$/;"	m	class:Test.SearchRequest
+newBuilder	Test.java	/^    public static Builder newBuilder(Test.SearchResponse prototype) {$/;"	m	class:Test.SearchResponse
+newBuilderForType	Test.java	/^    protected Builder newBuilderForType($/;"	m	class:Test.SearchRequest
+newBuilderForType	Test.java	/^    protected Builder newBuilderForType($/;"	m	class:Test.SearchResponse
+newBuilderForType	Test.java	/^    public Builder newBuilderForType() { return newBuilder(); }$/;"	m	class:Test.SearchRequest
+newBuilderForType	Test.java	/^    public Builder newBuilderForType() { return newBuilder(); }$/;"	m	class:Test.SearchResponse
+pageNumber_	Test.java	/^      private int pageNumber_ ;$/;"	f	class:Test.SearchRequest.Builder	file:
+pageNumber_	Test.java	/^    private int pageNumber_;$/;"	f	class:Test.SearchRequest	file:
+parseDelimitedFrom	Test.java	/^    public static Test.SearchRequest parseDelimitedFrom($/;"	m	class:Test.SearchRequest
+parseDelimitedFrom	Test.java	/^    public static Test.SearchRequest parseDelimitedFrom(java.io.InputStream input)$/;"	m	class:Test.SearchRequest
+parseDelimitedFrom	Test.java	/^    public static Test.SearchResponse parseDelimitedFrom($/;"	m	class:Test.SearchResponse
+parseDelimitedFrom	Test.java	/^    public static Test.SearchResponse parseDelimitedFrom(java.io.InputStream input)$/;"	m	class:Test.SearchResponse
+parseFrom	Test.java	/^    public static Test.SearchRequest parseFrom($/;"	m	class:Test.SearchRequest
+parseFrom	Test.java	/^    public static Test.SearchRequest parseFrom(byte[] data)$/;"	m	class:Test.SearchRequest
+parseFrom	Test.java	/^    public static Test.SearchRequest parseFrom(java.io.InputStream input)$/;"	m	class:Test.SearchRequest
+parseFrom	Test.java	/^    public static Test.SearchResponse parseFrom($/;"	m	class:Test.SearchResponse
+parseFrom	Test.java	/^    public static Test.SearchResponse parseFrom(byte[] data)$/;"	m	class:Test.SearchResponse
+parseFrom	Test.java	/^    public static Test.SearchResponse parseFrom(java.io.InputStream input)$/;"	m	class:Test.SearchResponse
+registerAllExtensions	Test.java	/^  public static void registerAllExtensions($/;"	m	class:Test
+resultPerPage_	Test.java	/^      private int resultPerPage_ ;$/;"	f	class:Test.SearchRequest.Builder	file:
+resultPerPage_	Test.java	/^    private int resultPerPage_;$/;"	f	class:Test.SearchRequest	file:
+ret_	Test.java	/^      private int ret_ ;$/;"	f	class:Test.SearchResponse.Builder	file:
+ret_	Test.java	/^    private int ret_;$/;"	f	class:Test.SearchResponse	file:
+serialVersionUID	Test.java	/^    private static final long serialVersionUID = 0L;$/;"	f	class:Test.SearchRequest	file:
+serialVersionUID	Test.java	/^    private static final long serialVersionUID = 0L;$/;"	f	class:Test.SearchResponse	file:
+setPageNumber	Test.java	/^      public Builder setPageNumber(int value) {$/;"	m	class:Test.SearchRequest.Builder
+setQuery	Test.java	/^      public Builder setQuery(String value) {$/;"	m	class:Test.SearchRequest.Builder
+setQuery	Test.java	/^      void setQuery(com.google.protobuf.ByteString value) {$/;"	m	class:Test.SearchRequest.Builder
+setResultPerPage	Test.java	/^      public Builder setResultPerPage(int value) {$/;"	m	class:Test.SearchRequest.Builder
+setRet	Test.java	/^      public Builder setRet(int value) {$/;"	m	class:Test.SearchResponse.Builder
+toBuilder	Test.java	/^    public Builder toBuilder() { return newBuilder(this); }$/;"	m	class:Test.SearchRequest
+toBuilder	Test.java	/^    public Builder toBuilder() { return newBuilder(this); }$/;"	m	class:Test.SearchResponse
+writeReplace	Test.java	/^    protected java.lang.Object writeReplace()$/;"	m	class:Test.SearchRequest
+writeReplace	Test.java	/^    protected java.lang.Object writeReplace()$/;"	m	class:Test.SearchResponse
+writeTo	Test.java	/^    public void writeTo(com.google.protobuf.CodedOutputStream output)$/;"	m	class:Test.SearchRequest
+writeTo	Test.java	/^    public void writeTo(com.google.protobuf.CodedOutputStream output)$/;"	m	class:Test.SearchResponse

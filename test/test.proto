@@ -1,0 +1,14 @@
+option cc_generic_services = true;	
+message SearchRequest {
+		required string query = 1;
+		optional int32 page_number = 2;
+		optional int32 result_per_page = 3;
+	};
+
+	message SearchResponse {
+		required int32 ret = 1;
+	};
+
+	service SearchService {
+		rpc Search (SearchRequest) returns (SearchResponse);
+	};
