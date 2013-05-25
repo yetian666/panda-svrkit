@@ -1,5 +1,9 @@
 #include <sstream>
+#include <string.h>
+
 #include "iException.h"
+
+using namespace std;
 
 namespace stdext
 {
@@ -43,7 +47,7 @@ namespace stdext
 		else if( _iErrNo < 0 ) 
 			return _sErrMsg;
 		
-		else if( _sErrMsg.empty() && _iErrNo => 0 ) 
+		else if( _sErrMsg.empty() && _iErrNo >= 0 ) 
 			return string( strerror_r(_iErrNo, buf , 1024));
 		
 		else  

@@ -6,14 +6,11 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 #include <pthread.h>
 
 #include "iLogShmQueue.h"
-#include "iShm.h"
-#include "iMagicNum.h"
-#include "iException.h"
-#include "iTerminalColor.h"
 
 using namespace unistdext;
 using namespace stdext;
@@ -27,7 +24,7 @@ namespace Comm
 	LogShmQueue :: ~LogShmQueue()
 	{}
 
-	LogShmQueue ::WriteOwnLog(const char * sFmt,...)
+	void LogShmQueue ::WriteOwnLog(const char * sFmt,...)
 	{
 		va_list ap;
 		va_start( ap, sFmt );
@@ -45,12 +42,12 @@ namespace Comm
 
 			char buf[2048];
 
-			snprintf( buf, sizeof(buf), "<%ld,%ld> ", getpid(), pthread_self() );
+			snprintf( buf, sizeof(buf), "<%ld,%ld> ", (long)getpid(), (long)pthread_self() );
 			
 			time_t now = time( NULL );
-			struct tmpTm;
+			struct tm tmpTm;
 			
-			struct *tm tmNow = localtime_r( now, &tmpTm);
+			struct tm* tmNow = localtime_r( &now, &tmpTm);
 
 			char tStr[64];
 			strftime( tStr, 64, "%x %X", tmNow);
@@ -79,16 +76,16 @@ namespace Comm
 		{
 			_shm = new  Shm( logShmQueuekey, logShmQueueSize, 0666 );
 
-			_shm.Init();
+			_shm->Init();
 		}
 		catch( MemException &e )
 		{
-			WriteOwnLog("%s(%d) %s", __func__, __LINE__, e.GetMsg() );
+			WriteOwnLog("%s(%d) %s", __func__, __LINE__, e.GetMsg().c_str() );
 			throw e;
 		}
 
 		//init shm queue head
-		_ptHeader = (LogShmQueueHead_t*)_shm.GetShmAddr();
+		_ptHeader = (LogShmQueueHead_t*)_shm->GetShmAddr();
 
 		_ptHeader->hMainVer = LogShmQueue_MainVer;
 		_ptHeader->hSubVer = LogShmQueue_SubVer;
@@ -97,8 +94,6 @@ namespace Comm
 		_ptHeader->iTailPos = 0;
 		_ptHeader->iQueueSize = 0;
 		_ptHeader->iFlag = LogShmQueue_FlagOK;
-
-		_ptHeader->sData = (char*)_ptHeader +sizeof(LogShmQueueHead_t);
 		
 	}
 
@@ -106,7 +101,7 @@ namespace Comm
 	 * buf format: char(STX)+short(len)+data+char(ETX)
 	 * push will modify head of shmQueue
 	*/
-	int LogShmQueue::Push(const char * pcBuf, const int iBufLen)
+	int LogShmQueue::Push(const char * pcBuf, const int& iBufLen)
 	{
 		if( _shm == NULL || _ptHeader == NULL )
 		{
@@ -143,7 +138,7 @@ namespace Comm
 		}
 
 		
-		
+		return 0;
 		
 	}
 
@@ -152,7 +147,7 @@ namespace Comm
 		WriteOwnLog(TnClRED"Reset the logshmqueue"TnClEND);
 
 		if( _shm != NULL )
-			free _shm;
+			delete _shm;
 		Init();
 	}
 	

@@ -20,4 +20,12 @@ namespace Comm
 		oss<<v;
 		return ret.append( oss.str() );
 	}
+
+	template <typename Type>
+	std::string TypeToStr( Type v)
+	{	
+		std::stringstream oss;
+		oss<<v;
+		return oss.str();
+	}
 }

@@ -19,6 +19,12 @@
 #include "base/stdext/iErrno.h"
 #include "base/stdext/iException.h"
 
+#include "base/iMagicNum.h"
+
+#include "core/log/iLog.h"
+
+#include "dao/iMysqlClient.h"
+
 #define COMM_OK 0
 #define COMM_ENET -1001
 #define COMM_EDECODE -1002

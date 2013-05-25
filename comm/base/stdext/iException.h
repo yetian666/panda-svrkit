@@ -10,27 +10,27 @@ namespace stdext
 	{
 	public:
 
-		Exception( const int iErrno, const string sErrMsg, const string sFunc = "", const string sFile="", const int iLine = 0);
+		Exception( const int iErrno, const std::string sErrMsg, const std::string sFunc = "", const std::string sFile="", const int iLine = 0);
 		
-		Exception( const string sErrMsg, const string sFunc = "", const string sFile="", const int iLine =0 );
+		Exception( const std::string sErrMsg, const std::string sFunc = "", const std::string sFile="", const int iLine =0 );
 
-		Exception( const int iErrno, const string sFunc = "", const string sFile="", const int iLine =0 );
+		Exception( const int iErrno, const std::string sFunc = "", const std::string sFile="", const int iLine =0 );
 
 		~Exception();
 		
-		const string what();
+		const std::string what();
 
-		const string GetErrMsg();
+		const std::string GetErrMsg();
 
-		const string GetMsg(); 
+		const std::string GetMsg(); 
 
 		const int GetErrNo();
 		
 	protected:
 		int _iErrNo;
-		string _sErrMsg;
-		string _sFile;
-		string _sFunc;
+		std::string _sErrMsg;
+		std::string _sFile;
+		std::string _sFunc;
 		int _iLine;
 	};
 
@@ -38,13 +38,13 @@ namespace stdext
 	class IOException : public Exception
 	{
 	public:
-		IOException( const int iErrno, const string sErrMsg, const string sFunc = "", const string sFile="", const int iLine = 0):
+		IOException( const int iErrno, const std::string sErrMsg, const std::string sFunc = "", const std::string sFile="", const int iLine = 0):
 			Exception( iErrno, sErrMsg, sFunc, iLine ){}
 		
-		IOException( const string sErrMsg, const string sFunc = "", const string sFile="", const int iLine =0 ):
+		IOException( const std::string sErrMsg, const std::string sFunc = "", const std::string sFile="", const int iLine =0 ):
 			Exception( sErrMsg, sFunc, sFile, iLine ){}
 
-		IOException( const int iErrno, const string sFunc = "", const string sFile="", const int iLine =0 ):
+		IOException( const int iErrno, const std::string sFunc = "", const std::string sFile="", const int iLine =0 ):
 			Exception( iErrno, sFunc, sFile, iLine ){}
 
 		~IOException();
@@ -53,13 +53,13 @@ namespace stdext
 	class MemException : public Exception
 	{
 	public:
-		MemException( const int iErrno, const string sErrMsg, const string sFunc = "", const string sFile="", const int iLine = 0):
+		MemException( const int iErrno, const std::string sErrMsg, const std::string sFunc = "", const std::string sFile="", const int iLine = 0):
 			Exception( iErrno, sErrMsg, sFunc, iLine ){}
 		
-		MemException( const string sErrMsg, const string sFunc = "", const string sFile="", const int iLine =0 ):
+		MemException( const std::string sErrMsg, const std::string sFunc = "", const std::string sFile="", const int iLine =0 ):
 			Exception( sErrMsg, sFunc, sFile, iLine ){}
 			
-		MemException( const int iErrno, const string sFunc = "", const string sFile="", const int iLine =0 ):
+		MemException( const int iErrno, const std::string sFunc = "", const std::string sFile="", const int iLine =0 ):
 			Exception( iErrno, sFunc, sFile, iLine ){}
 			
 		~MemException();

@@ -1,6 +1,7 @@
 #include "iShm.h"
-#include "iException.h"
+#include "base/stdext/iException.h"
 #include <errno.h>
+#include <string.h>
 
 using namespace stdext;
 

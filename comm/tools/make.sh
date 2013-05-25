@@ -1,0 +1,1 @@
+make $1 $2 2>&1 |while read l;do echo $l|awk '{if(index($0,"err")||index($0,"Err")) print "\033[1;31m"$0"\033[m";else if(index($0,"warn")||index($0,"Warn"))print "\033[1;33m"$0"\033[m";else print $0;}';done

@@ -1,8 +1,9 @@
 #pragma once
 
-#include <uinstd.h>
+#include <unistd.h>
+#include <string.h>
 
-#include "iShm.h"
+#include "iComm.h"
 
 using namespace unistdext;
 using namespace stdext;
@@ -21,6 +22,7 @@ using namespace stdext;
 
 #define ERR_LogShmQueue_ShmOrHeadNULL LogShmQueue_ErrNo(-1)
 #define ERR_LogShmQueue_PushErr LogShmQueue_ErrNo(-2)
+#define ERR_LogShmQueue_ShmNotEnoughRoom LogShmQueue_ErrNo(-3)
 
 namespace Comm
 {
@@ -57,16 +59,16 @@ namespace Comm
 		void Init();
 
 		
-		int Push(const char* pcBuf, int& iBufLen );
+		int Push(const char* pcBuf, const int& iBufLen );
 
-		int Pop( char* pcBuf ,int& iBufLen );
+		int Pop( char* pcBuf ,const int& iBufLen );
 
 
 	private:
 		void Reset();
 		
 	private:
-		void WriteOwnLog(const char *sFmt, ...) __attribute__( (__format__( __printf__,1, 2)));
+		void WriteOwnLog(const char *sFmt, ...) __attribute__( (__format__( __printf__,2, 3)));
 
 	private:
 		Shm* _shm;

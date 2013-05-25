@@ -1,7 +1,9 @@
 include ../PROJ_ROOT
 
-INCLUDES = -I/usr/local/include -I$(PROJ_ROOT)/comm
-LIBS = -L/usr/local/lib/
+casocklib_dir = $(PROJ_ROOT)/thirdparty/casocklib/src
+
+INCLUDES = -I/usr/local/include -I$(PROJ_ROOT)/comm -I/usr/local/mysql/include/ -I$(casocklib_dir)
+LIBS = -L/usr/local/lib/ 
 
 LIBDIR = /usr/local/lib
 
@@ -13,7 +15,7 @@ CPPFLAGS = -Wall -g
 
 OUTPUT = libcomm.a
 
-SRCS = $(wildcard *.cpp utils/*.cpp core/file/*.cpp core/concurrent/*.cpp)
+SRCS = $(wildcard *.cpp utils/*.cpp core/file/*.cpp core/log/*.cpp  core/concurrent/*.cpp dao/*.cpp base/*.cpp base/stdext/*.cpp base/unistdext/*.cpp)
 
 OBJS = $(SRCS:.cpp=.o )
 

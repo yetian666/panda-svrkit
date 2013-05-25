@@ -12,7 +12,7 @@ namespace unistdext
 	public:
 	    Shm( key_t tKey, size_t tSize, int iMode = 0600 );
 
-	    virtal ~Shm();
+	    virtual ~Shm();
 
 	    void Init();
 
