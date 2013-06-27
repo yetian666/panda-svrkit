@@ -1,8 +1,6 @@
 include ../PROJ_ROOT
 
-casocklib_dir = $(PROJ_ROOT)/thirdparty/casocklib/src
-
-INCLUDES = -I/usr/local/include -I$(PROJ_ROOT)/comm -I/usr/local/mysql/include/ -I$(casocklib_dir)
+INCLUDES = -I/usr/local/include -I$(PROJ_ROOT)/comm -I/usr/local/mysql/include/ 
 LIBS = -L/usr/local/lib/ 
 
 LIBDIR = /usr/local/lib
@@ -11,7 +9,7 @@ CPP = ccache g++
 
 MAKEDEPEND = gcc -MM
 
-CPPFLAGS = -Wall -g
+CPPFLAGS = -Wall -g -DUSE_THREADS
 
 OUTPUT = libcomm.a
 

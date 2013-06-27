@@ -4,7 +4,7 @@
 #include <boost/interprocess/sync/scoped_lock.hpp>
 #include <boost/thread/mutex.hpp>
 
-#include "casock/util/Logger.h"
+#include "iLogger.h"
 
 #include "utils/iString.h"
 

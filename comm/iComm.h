@@ -11,6 +11,7 @@
 #include "utils/iStressTest.h"
 #include "utils/iServerControl.h"
 #include "utils/iOptionMap.h"
+#include "utils/iTypes.h"
 
 #include "core/file/iEndpoint.h"
 #include "core/file/iBaseClientConfig.h"
@@ -22,6 +23,8 @@
 #include "base/iMagicNum.h"
 
 #include "core/log/iLog.h"
+
+#include "core/concurrent/iLockable.h"
 
 #include "dao/iMysqlClient.h"
 

@@ -1,0 +1,29 @@
+option java_package = "so.omni.douniu.network.protocal";
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MethodOptions
+{
+	optional string OptionString = 50001;
+}
+
+extend google.protobuf.MethodOptions
+{
+	optional string Usage = 50002;
+}
+
+message BaseRequest
+{
+	required int32 uin = 1;
+	required string deviceid = 2;
+	required string deviceType = 3;
+	required string sessionkey = 4;
+	required int32 clientversion = 5;
+}
+
+message BaseResponse
+{
+	required int32 ret = 1;
+	required string errmsg = 2;
+}
+

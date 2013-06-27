@@ -59,7 +59,10 @@ namespace Comm
 			{
 				_sErrMsg= string("ERR: mysql_real_connect fail, ") + mysql_error( _pstMysql );
 
+				LogErr("ERR %s(%d) mysql_real_connect %s", __func__, __LINE__, _sErrMsg.c_str() );
+
 				mysql_close( _pstMysql );
+
 				_pstMysql = NULL;
 				return -1;
 			}
@@ -71,6 +74,11 @@ namespace Comm
 
 	int MysqlClient::Query(const char * pcSql)
 	{
+		if(_pstMysql == NULL)
+		{
+			return -1;
+		}
+			
 		int ret = mysql_query( _pstMysql, pcSql );
 
 		if( CR_SERVER_LOST == ret || CR_SERVER_GONE_ERROR == ret )
